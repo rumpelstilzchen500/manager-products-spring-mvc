@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-
+    <h1>Select : ${SelectAll}</h1>
 </body>
 </html>
