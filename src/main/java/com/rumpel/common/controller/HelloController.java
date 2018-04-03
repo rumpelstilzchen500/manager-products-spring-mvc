@@ -1,4 +1,4 @@
-package com.rumpel.common.cotroller;
+package com.rumpel.common.controller;
 
 import com.rumpel.common.service.UserService;
 import org.springframework.stereotype.Controller;
