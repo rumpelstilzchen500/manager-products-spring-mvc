@@ -2,7 +2,7 @@ package com.rumpel.common;
 
 import com.rumpel.common.models.User;
 import com.rumpel.common.service.UserService;
-import com.rumpel.common.xml.parse_xml.PathToElement;
+import com.rumpel.common.xml.dao.OffersXmlDaoImpl;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,13 +13,13 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException, ParserConfigurationException, SAXException, XPathExpressionException, IOException {
         UserService userService = new UserService();
-        PathToElement pathToElement = new PathToElement();
+        OffersXmlDaoImpl offersXmlDao = new OffersXmlDaoImpl();
 
         User user = new User();
-        user.setFirst_name(pathToElement.getName());
-        user.setLast_name("test_last_name2");
+        user.setFirst_name(offersXmlDao.getName(1));
+        user.setLast_name(offersXmlDao.getId(1));
         user.setPhone(932071888);
-        user.setSex("man");
+        user.setSex(offersXmlDao.getPriceRetail(1));
 
         //create
         userService.add(user);
@@ -31,7 +31,7 @@ public class Main {
         //delete
         //userService.delete(user);
         //new PathToElement();
-        userService.closeTransactionSession();
+        //userService.closeTransactionSession();
 
     }
 }

@@ -16,7 +16,7 @@ public class UserService extends SessionUtil implements UserDAO{
         openTransactionSession();
         Session session = getSession();
         session.save(user);
-        //closeTransactionSession();
+        closeTransactionSession();
     }
 
     public List<User> getAll() throws SQLException {
