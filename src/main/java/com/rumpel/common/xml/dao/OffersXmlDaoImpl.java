@@ -17,8 +17,15 @@ public class OffersXmlDaoImpl implements OffersXmlDAO{
         return name;
     }
 
-    public String getPriceRetail(int i) throws XPathExpressionException {
+    public String getArticle(int i) throws XPathExpressionException {
+        String article = XmlUtil.getxPath().evaluate("/КоммерческаяИнформация/ПакетПредложений/Предложения/Предложение[" + i +"]/Артикул[1]", XmlUtil.getDocument());
+        return article;
+    }
+
+    public Integer getPriceRetail(int i) throws XPathExpressionException {
         String price_retail = XmlUtil.getxPath().evaluate("/КоммерческаяИнформация/ПакетПредложений/Предложения/Предложение[" + i +"]/Цены[1]/Цена/ЦенаЗаЕдиницу", XmlUtil.getDocument());
-        return price_retail;
+        Integer price_retail_int = Integer.parseInt(price_retail);
+
+        return  price_retail_int;
     }
 }

@@ -1,10 +1,11 @@
 package com.rumpel.common.service;
 
 
-import com.rumpel.common.models.Product;
 
+import javax.xml.xpath.XPathExpressionException;
 import java.sql.SQLException;
 
+
 public interface ProductService {
-    void add(Product product) throws SQLException;
+    void setAll(int i) throws SQLException, XPathExpressionException;
 }

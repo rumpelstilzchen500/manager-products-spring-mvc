@@ -12,6 +12,7 @@ public class Product implements Serializable{
     private Long id;
     private String fullName;
     private String article;
+    private String code_id_from_1c;
     private String code;
     private Integer price_retail;
     private Integer price_wholesale;
@@ -84,6 +85,15 @@ public class Product implements Serializable{
 
     public void setPrice_purchase(Integer price_purchase) {
         this.price_purchase = price_purchase;
+    }
+
+    @Column(name = "code_id_from_1c")
+    public String getCode_id_from_1C() {
+        return code_id_from_1c;
+    }
+
+    public void setCode_id_from_1C(String code_id_from_1C) {
+        this.code_id_from_1c = code_id_from_1C;
     }
 
     @ManyToMany(mappedBy = "products")

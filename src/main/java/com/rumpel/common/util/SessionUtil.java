@@ -35,4 +35,5 @@ public class SessionUtil {
         transaction.commit();
         closeSession();
     }
+
 }

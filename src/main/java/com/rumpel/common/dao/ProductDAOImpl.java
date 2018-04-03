@@ -2,6 +2,7 @@ package com.rumpel.common.dao;
 
 import com.rumpel.common.models.Product;
 import com.rumpel.common.util.SessionUtil;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 

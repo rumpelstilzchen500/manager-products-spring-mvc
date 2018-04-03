@@ -25,7 +25,7 @@ public class UserService extends SessionUtil implements UserDAO{
         String sql = "SELECT first_name FROM user";
         Query query = session.createSQLQuery(sql);//user - table
         List<User> first_nameList = query.list();
-        //closeTransactionSession();
+        closeTransactionSession();
         return first_nameList;
     }
 
