@@ -2,6 +2,7 @@ package com.rumpel.common.models;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 
@@ -23,6 +24,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id_user")
+    @NotNull
     public Long getUser_id() {
         return user_id;
     }
