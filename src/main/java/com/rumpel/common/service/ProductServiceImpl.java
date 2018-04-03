@@ -1,17 +1,13 @@
 package com.rumpel.common.service;
 
-
 import com.rumpel.common.dao.ProductDAOImpl;
 import com.rumpel.common.models.Product;
 import com.rumpel.common.models.User;
 import com.rumpel.common.util.SessionUtil;
 import com.rumpel.common.xml.dao.OffersXmlDaoImpl;
-import org.hibernate.Session;
 import org.springframework.stereotype.Service;
-
 import javax.xml.xpath.XPathExpressionException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,6 +26,10 @@ public class ProductServiceImpl extends SessionUtil implements ProductService{
         product.setPrice_purchase(0);
         product.setPrice_wholesale(0);
         productDAO.add(product);
-
     }
+    public List<User> getAll() throws SQLException {
+        ProductDAOImpl productDAO = new ProductDAOImpl();
+        return productDAO.getAll();
+    }
+
 }

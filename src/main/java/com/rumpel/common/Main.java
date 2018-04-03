@@ -2,8 +2,6 @@ package com.rumpel.common;
 
 import com.rumpel.common.service.ProductServiceImpl;
 import org.xml.sax.SAXException;
-
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.IOException;
@@ -12,14 +10,14 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException, ParserConfigurationException, SAXException, XPathExpressionException, IOException {
 
-
         ProductServiceImpl productService = new ProductServiceImpl();
-        productService.setAll(102);
+        //productService.setAll(102);
 
 
+        System.out.println(productService.getAll());
 
 
-
+        //--------------------------------------------------------------------------------------------------------------
 
         /*UserService userService = new UserService();
         OffersXmlDaoImpl offersXmlDao = new OffersXmlDaoImpl();
