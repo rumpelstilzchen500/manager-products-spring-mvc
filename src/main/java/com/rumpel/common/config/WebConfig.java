@@ -13,16 +13,13 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.rumpel.common")
+@ComponentScan("com.rumpel.common")
 public class WebConfig implements WebMvcConfigurer {
 
 
-
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/pages/**").addResourceLocations("/pages/");
     }
-
-
     @Bean
     public InternalResourceViewResolver setupViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -33,7 +30,4 @@ public class WebConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
 }
