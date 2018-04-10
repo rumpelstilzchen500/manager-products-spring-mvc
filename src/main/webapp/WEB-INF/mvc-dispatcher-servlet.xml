@@ -18,4 +18,8 @@
         </property>
     </bean>
 
+    <bean id="productService" class="com.rumpel.common.service.ProductServiceImpl">
+
+    </bean>
+
 </beans>

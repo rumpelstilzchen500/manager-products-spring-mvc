@@ -1,5 +1,6 @@
 package com.rumpel.common;
 
+import com.rumpel.common.excel.WriteToExcel;
 import com.rumpel.common.service.ProductServiceImpl;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
@@ -10,11 +11,15 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException, ParserConfigurationException, SAXException, XPathExpressionException, IOException {
 
-        ProductServiceImpl productService = new ProductServiceImpl();
+        WriteToExcel.writeIntoExcel("Excel.xls");
+        WriteToExcel.readFromExcel("Excel");
+
+
+        /*ProductServiceImpl productService = new ProductServiceImpl();*/
         //productService.setAll(102);
 
 
-        System.out.println(productService.getAll());
+        /*System.out.println(productService.getAll());*/
 
 
         //--------------------------------------------------------------------------------------------------------------

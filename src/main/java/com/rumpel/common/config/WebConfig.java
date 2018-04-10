@@ -1,5 +1,6 @@
 package com.rumpel.common.config;
 
+import com.rumpel.common.service.ProductServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +29,11 @@ public class WebConfig implements WebMvcConfigurer {
         resolver.setViewClass(JstlView.class);
 
         return resolver;
+    }
+
+    @Bean
+    public ProductServiceImpl getProductServiceImpl(){
+        return new ProductServiceImpl();
     }
 
 }
